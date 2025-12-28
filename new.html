@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>पंकज आणि अश्विनी - शुभ विवाह</title>
+
+      <!-- Google Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@300;500&display=swap"
+            rel="stylesheet">
+
+      <!-- FontAwesome Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+      <style>
+            /* --- CSS Variables & Reset --- */
+            :root {
+                  --primary-color: #E63946;
+                  /* Royal Red */
+                  --secondary-color: #F4A261;
+                  /* Gold/Orange */
+                  --bg-color: #FFF9F5;
+                  /* Creamy White */
+                  --text-color: #333;
+                  --font-marathi: 'Noto Sans Devanagari', sans-serif;
+                  --font-stylish: 'Great Vibes', cursive;
+            }
+
+            * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+            }
+
+            body {
+                  font-family: var(--font-marathi);
+                  background-color: var(--bg-color);
+                  color: var(--text-color);
+                  overflow-x: hidden;
+                  scroll-behavior: smooth;
+            }
+
+            /* --- Utility Classes --- */
+            .container {
+                  max-width: 1100px;
+                  margin: 0 auto;
+                  padding: 0 20px;
+            }
+
+            .section-title {
+                  text-align: center;
+                  font-size: 2.5rem;
+                  color: var(--primary-color);
+                  margin-bottom: 3rem;
+                  position: relative;
+            }
+
+            .section-title::after {
+                  content: '❦';
+                  display: block;
+                  font-size: 1.5rem;
+                  color: var(--secondary-color);
+                  margin-top: 10px;
+            }
+
+            /* --- Animations --- */
+            .reveal {
+                  opacity: 0;
+                  transform: translateY(30px);
+                  transition: all 0.8s ease-out;
+            }
+
+            .reveal.active {
+                  opacity: 1;
+                  transform: translateY(0);
+            }
+
+            /* --- Welcome Screen (For Music Autoplay) --- */
+            #welcome-screen {
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1583934555093-9f4a525c689f?q=80&w=2074&auto=format&fit=crop'); */
+                  background-color: black;
+                  background-size: cover;
+                  background-position: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  z-index: 99999;
+                  text-align: center;
+                  color: white;
+                  transition: opacity 0.8s ease;
+            }
+
+            .welcome-content h1 {
+                  font-family: var(--font-stylish);
+                  font-size: 4rem;
+                  color: var(--secondary-color);
+                  margin: 20px 0;
+            }
+
+            .enter-btn {
+                  margin-top: 30px;
+                  padding: 12px 30px;
+                  font-size: 1.2rem;
+                  background-color: var(--primary-color);
+                  color: white;
+                  border: none;
+                  border-radius: 50px;
+                  cursor: pointer;
+                  box-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
+                  animation: pulseBtn 2s infinite;
+                  font-family: var(--font-marathi);
+            }
+
+            @keyframes pulseBtn {
+                  0% {
+                        transform: scale(1);
+                  }
+
+                  50% {
+                        transform: scale(1.05);
+                  }
+
+                  100% {
+                        transform: scale(1);
+                  }
+            }
+
+            /* --- Hero Section --- */
+            header {
+                  height: 100vh;
+                  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop');
+                  background-size: cover;
+                  background-position: center;
+                  background-attachment: fixed;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-align: center;
+                  color: white;
+                  position: relative;
+            }
+
+            .hero-content h2 {
+                  font-size: 2rem;
+                  margin-bottom: 10px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+            }
+
+            .hero-content h1 {
+                  font-family: var(--font-stylish);
+                  font-size: 5rem;
+                  margin: 20px 0;
+                  color: var(--secondary-color);
+                  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .scroll-down {
+                  position: absolute;
+                  bottom: 30px;
+                  animation: bounce 2s infinite;
+            }
+
+            .scroll-down i {
+                  color: white;
+                  font-size: 2rem;
+            }
+
+            @keyframes bounce {
+
+                  0%,
+                  20%,
+                  50%,
+                  80%,
+                  100% {
+                        transform: translateY(0);
+                  }
+
+                  40% {
+                        transform: translateY(-10px);
+                  }
+
+                  60% {
+                        transform: translateY(-5px);
+                  }
+            }
+
+            /* --- Couple Section --- */
+            #couple {
+                  padding: 80px 0;
+                  text-align: center;
+            }
+
+            .couple-wrapper {
+                  display: flex;
+                  justify-content: center;
+                  align-items: flex-start;
+                  gap: 50px;
+                  flex-wrap: wrap;
+                  margin-top: 40px;
+            }
+
+            .person {
+                  text-align: center;
+                  max-width: 300px;
+            }
+
+            .img-box {
+                  width: 220px;
+                  height: 220px;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  margin: 0 auto 20px;
+                  border: 5px solid var(--secondary-color);
+                  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                  transition: transform 0.s;
+            }
+
+            .img-box:hover {
+                  transform: scale(1.05);
+            }
+
+            .img-box img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+            }
+
+            .person h3 {
+                  font-size: 1.8rem;
+                  color: var(--primary-color);
+                  margin-bottom: 10px;
+            }
+
+            .divider {
+                  font-family: var(--font-stylish);
+                  font-size: 3rem;
+                  color: var(--secondary-color);
+                  align-self: center;
+            }
+
+            /* --- Events Section --- */
+            #events {
+                  padding: 80px 0;
+                  background-color: #fff;
+            }
+
+            .event-card {
+                  background: var(--bg-color);
+                  border: 1px solid #eee;
+                  border-radius: 15px;
+                  padding: 30px;
+                  margin-bottom: 30px;
+                  display: flex;
+                  align-items: center;
+                  gap: 30px;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                  transition: transform 0.3s;
+            }
+
+            .event-card:hover {
+                  transform: translateY(-5px);
+                  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            .event-icon {
+                  font-size: 3rem;
+                  color: var(--primary-color);
+                  min-width: 80px;
+                  text-align: center;
+            }
+
+            .event-details h3 {
+                  font-size: 1.8rem;
+                  margin-bottom: 10px;
+                  color: var(--primary-color);
+            }
+
+            .event-info {
+                  font-size: 1.1rem;
+                  line-height: 1.8;
+                  color: #555;
+            }
+
+            /* --- Falling Petals --- */
+            .petal {
+                  position: fixed;
+                  top: -10%;
+                  z-index: 9999;
+                  user-select: none;
+                  pointer-events: none;
+                  animation-name: fall;
+                  animation-timing-function: linear;
+                  animation-iteration-count: infinite;
+            }
+
+            @keyframes fall {
+                  0% {
+                        top: -10%;
+                        transform: translateX(0) rotate(0deg);
+                        opacity: 1;
+                  }
+
+                  100% {
+                        top: 110%;
+                        transform: translateX(100px) rotate(360deg);
+                        opacity: 0;
+                  }
+            }
+
+            /* --- Countdown --- */
+            #countdown {
+                  display: flex;
+                  justify-content: center;
+                  gap: 20px;
+                  margin: 20px 0;
+                  flex-wrap: wrap;
+            }
+
+            .time-box {
+                  background: rgba(255, 255, 255, 0.9);
+                  padding: 20px;
+                  border-radius: 10px;
+                  min-width: 100px;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                  border-bottom: 4px solid var(--primary-color);
+            }
+
+            .time-box span {
+                  display: block;
+                  font-size: 2.5rem;
+                  font-weight: bold;
+                  color: var(--primary-color);
+                  font-family: var(--font-stylish);
+            }
+
+            .time-box p {
+                  margin: 0;
+                  font-size: 0.9rem;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+            }
+
+            /* --- Quote & Footer --- */
+            #quote {
+                  padding: 60px 0;
+                  background: var(--primary-color);
+                  color: white;
+                  text-align: center;
+            }
+
+            #quote p {
+                  font-size: 1.5rem;
+                  font-style: italic;
+            }
+
+            #location {
+                  padding: 80px 0;
+                  text-align: center;
+            }
+
+            .map-container {
+                  width: 100%;
+                  height: 400px;
+                  border-radius: 15px;
+                  overflow: hidden;
+                  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                  margin-top: 30px;
+            }
+
+            footer {
+                  background: #222;
+                  color: #fff;
+                  padding: 40px 0;
+                  text-align: center;
+            }
+
+            .hashtag {
+                  font-family: var(--font-stylish);
+                  font-size: 2rem;
+                  color: var(--secondary-color);
+            }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                  .hero-content h1 {
+                        font-size: 3.5rem;
+                  }
+
+                  .couple-wrapper {
+                        flex-direction: column;
+                        gap: 30px;
+                        align-items: center;
+                  }
+
+                  .event-card {
+                        flex-direction: column;
+                        text-align: center;
+                  }
+
+                  .divider {
+                        transform: rotate(90deg);
+                        margin: 10px 0;
+                  }
+            }
+
+            /* Music Button */
+            .music-control {
+                  position: fixed;
+                  bottom: 20px;
+                  right: 20px;
+                  background: var(--primary-color);
+                  color: white;
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+                  z-index: 10000;
+                  box-shadow: 0 0 15px rgba(230, 57, 70, 0.6);
+                  animation: pulse 2s infinite;
+            }
+
+            @keyframes pulse {
+                  0% {
+                        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+                  }
+
+                  70% {
+                        box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
+                  }
+
+                  100% {
+                        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+                  }
+            }
+      </style>
+</head>
+
+<body>
+
+      <!-- Welcome Screen (To start music) -->
+      <div id="welcome-screen">
+            <div class="welcome-content">
+                  <p>॥ श्री गणेशाय नमः ॥</p>
+                  <h1> अश्विनी<span>  &  </span>पंकज</h1>
+                  <p>यांच्या लग्नाला आपले सहर्ष स्वागत आहे!</p>
+                  <button class="enter-btn" onclick="startWedding()">💌 निमंत्रण पत्रिका उघडा</button>
+            </div>
+      </div>
+
+      <!-- Music Player -->
+      <div class="music-control" onclick="toggleMusic()">
+            <i id="music-icon" class="fas fa-pause"></i> <!-- Initially playing icon -->
+      </div>
+      <audio id="wedding-music" loop>
+            <source
+                  src="./images/sam-wedding-music-5-258972.mp3"
+                  type="audio/mpeg">
+      </audio>
+
+      <!-- Header / Hero Section -->
+      <header id="home">
+            <div class="hero-content">
+                  <p class="shloka">॥ श्री गणेशाय नमः ॥</p>
+                  <h2 class="reveal">आमच्या लग्नाला यायचं हं!</h2>
+                  <h1 class="reveal">अश्विनी <span
+                              style="font-size: 0.6em; font-family: 'Poppins', sans-serif;">&</span> पंकज</h1>
+                  <p class="reveal" style="font-size: 1.4rem; margin-top: 10px; font-weight: bold;">०५ फेब्रुवारी २०२६
+                  </p>
+                  <p class="reveal" style="font-size: 1rem; margin-top: 5px;">॥ शुभ मंगल विवाह ॥</p>
+            </div>
+            <div class="scroll-down">
+                  <a href="#couple"><i class="fas fa-chevron-down"></i></a>
+            </div>
+      </header>
+
+      <!-- Timer Section -->
+      <section id="timer-section"
+            style="background: url('https://www.transparenttextures.com/patterns/cubes.png'); padding: 40px 0; text-align: center;">
+            <div class="container">
+                  <h2 class="reveal" style="color: var(--secondary-color);">शुभ विवाहास उरलेले क्षण</h2>
+                  <div id="countdown" class="reveal">
+                        <div class="time-box"><span id="days">00</span>
+                              <p>दिवस</p>
+                        </div>
+                        <div class="time-box"><span id="hours">00</span>
+                              <p>तास</p>
+                        </div>
+                        <div class="time-box"><span id="minutes">00</span>
+                              <p>मिनिटे</p>
+                        </div>
+                        <div class="time-box"><span id="seconds">00</span>
+                              <p>सेकंद</p>
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <!-- Couple Introduction -->
+      <section id="couple">
+            <div class="container">
+            <h2 class="section-title reveal">वधू आणि वर</h2>
+
+                  <div class="couple-wrapper reveal">
+                        <!-- Bride (Ashwini) -->
+                        <div class="person">
+                              <div class="img-box">
+                                    <!-- फोटो: अश्विनी -->
+                                    <img src="./images/bride.jpeg" alt="Ashwini"
+                                          onerror="this.src='https://img.freepik.com/free-photo/beautiful-indian-bride-posing-traditional-wedding-attire_1157-43950.jpg?w=740'">
+                              </div>
+                              <h3>चि. सौ. का. अश्विनी</h3>
+                              <div class="person-details">
+                                    <p><strong>श्री. प्रल्हाद काशीराम वाघ</strong> यांची नात</p>
+                                    <p><strong>सौ. मनीषा व श्री. कैलास वाघ</strong> यांची सुकन्या</p>
+                                    <p>रा. चिंचोली पिंप्री, ता. जामनेर, जि. जळगाव</p>
+                              </div>
+                        </div>
+
+                        <div class="divider">&</div>
+
+                        <!-- Groom (Pankaj) -->
+                        <div class="person">
+                              <div class="img-box">
+                                    <!-- फोटो: पंकज -->
+                                    <img src="./images/groom.jpeg" alt="Pankaj"
+                                          onerror="this.src='https://img.freepik.com/free-photo/groom-putting-ring-bride-s-finger_1157-33829.jpg?w=740'">
+                              </div>
+                              <h3>चि. पंकज</h3>
+                              <div class="person-details">
+                                    <p><strong>कै. पुंडलिक निळकंठ पाटील</strong> यांचे नातू</p>
+                                    <p><strong>सौ. वंदना व श्री. सुखदेव पाटील</strong> यांचे सुपुत्र</p>
+                                    <p>रा. जळगाव, ता. जळगाव, जि. जळगाव</p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <!-- Quote Section -->
+      <section id="quote">
+            <div class="container reveal">
+                  <p>"लग्नाच्या गाठी स्वर्गात बांधल्या जातात, पण त्या साजरा आम्ही आपल्या साक्षीने करू इच्छितो."</p>
+            </div>
+      </section>
+
+      <!-- Events Section -->
+      <section id="events">
+            <div class="container">
+                  <h2 class="section-title reveal">विवाह कार्यक्रम</h2>
+
+                  <!-- Event 1: Haldi -->
+                  <div class="event-card reveal">
+                        <div class="event-icon">
+                              <i class="fas fa-sun" style="color: #FFD700;"></i>
+                        </div>
+                        <div class="event-details" style="flex: 1;">
+                              <h3>✨ हळदी समारंभ</h3>
+                              <div class="event-info">
+                                    <p><strong>तारीख:</strong> ४ फेब्रुवारी २०२६, बुधवार</p>
+                                    <p><strong>वेळ:</strong> सायंकाळी ४:०० वाजता</p>
+                                    <p>
+                                          <strong>स्थळ:</strong> वधूचे निवासस्थानी (चिंचोली पिंप्री)
+                                          <a href="https://www.google.com/maps/search/?api=1&query=Wagh+General+Store+Chincholi+Pimpri+Jamner+Jalgaon+424209"
+                                                target="_blank" title="Google Map वर पहा"
+                                                style="display: inline-block; margin-left: 10px; background-color: #E63946; color: white; padding: 5px 10px; border-radius: 50%; text-decoration: none; font-size: 0.9rem; vertical-align: middle;">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                          </a>
+                                    </p>
+                              </div>
+                        </div>
+                  </div>
+
+                  <!-- Event 2: Wedding -->
+                  <div class="event-card reveal">
+                        <div class="event-icon">
+                              <i class="fas fa-heart" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div class="event-details">
+                              <h3>💍 विवाह सोहळा</h3>
+                              <div class="event-info">
+                                    <p><strong>तारीख:</strong> ५ फेब्रुवारी २०२६, गुरुवार</p>
+                                    <p><strong>वेळ:</strong> दुपारी १२:३० वाजता</p>
+                                    <p><strong>स्थळ:</strong> मुक्ताई मंगल कार्यालय, बोदवड, जि. जळगाव</p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <!-- Location Section -->
+      <section id="location">
+            <div class="container">
+                  <h2 class="section-title reveal">विवाह स्थळ</h2>
+                  <p class="reveal" style="font-size: 1.2rem;">
+                        <strong>मुक्ताई मंगल कार्यालय</strong><br>
+                        नाडगाव रोड, बोदवड, जि. जळगाव - ४२५३१०
+                  </p>
+
+                  <div class="map-container reveal">
+                        <iframe
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.9528994537!2d76.0004!3d20.9548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd90fa4a4a4a4a4%3A0x0!2sMuktai%20Mangal%20Karyalay%20Bodwad!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+                              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                              referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                  </div>
+
+                  <div style="margin-top: 30px; text-align: center;">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Muktai+Mangal+Karyalay+Bodwad+Nadgaon+Road"
+                              target="_blank"
+                              style="text-decoration: none; background: var(--primary-color); color: white; padding: 10px 20px; border-radius: 5px;">
+                              <i class="fas fa-location-arrow"></i> लोकेशन बघा
+                        </a>
+                  </div>
+            </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+            <div class="container">
+                  <p class="footer-note">निमंत्रक: समस्त वाघ परिवार</p>
+                  <div class="hashtag">#Ashwini&Pankaj2026</div>
+                  <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.7;">Made with ❤️ by Harshal for Ashwini &
+                        Pankaj</p>
+            </div>
+      </footer>
+
+      <!-- JavaScript -->
+      <script>
+            // --- 1. Welcome Screen & Music ---
+            function startWedding() {
+                  var screen = document.getElementById('welcome-screen');
+                  var music = document.getElementById('wedding-music');
+
+                  music.play().catch(error => console.log("Music play blocked", error));
+
+                  screen.style.opacity = '0';
+                  setTimeout(() => { screen.style.display = 'none'; }, 800);
+            }
+
+            // --- 2. Countdown Timer ---
+            const weddingDate = new Date("Feb 05, 2026 12:30:00").getTime();
+            const timer = setInterval(function () {
+                  const now = new Date().getTime();
+                  const distance = weddingDate - now;
+
+                  if (distance < 0) {
+                        clearInterval(timer);
+                        document.getElementById("countdown").innerHTML = "<h3 style='color:var(--primary-color)'>शुभ विवाह संपन्न!</h3>";
+                        return;
+                  }
+
+                  document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                  document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            }, 1000);
+
+            // --- 3. Scroll Reveal ---
+            window.addEventListener('scroll', reveal);
+            function reveal() {
+                  var reveals = document.querySelectorAll('.reveal');
+                  for (var i = 0; i < reveals.length; i++) {
+                        if (reveals[i].getBoundingClientRect().top < window.innerHeight - 150) {
+                              reveals[i].classList.add('active');
+                        }
+                  }
+            }
+            reveal();
+
+            // --- 4. Music Toggle ---
+            var music = document.getElementById("wedding-music");
+            var icon = document.getElementById("music-icon");
+            function toggleMusic() {
+                  if (music.paused) {
+                        music.play();
+                        icon.classList.remove("fa-play");
+                        icon.classList.add("fa-pause");
+                  } else {
+                        music.pause();
+                        icon.classList.remove("fa-pause");
+                        icon.classList.add("fa-play");
+                  }
+            }
+
+            // --- 5. Random Petal Animation ---
+            function createPetal() {
+                  const petal = document.createElement('div');
+                  petal.classList.add('petal');
+
+                  // Randomly choose between Flower and Heart
+                  const shapes = ['🌸', '❤️', '🏵️'];
+                  petal.innerText = shapes[Math.floor(Math.random() * shapes.length)];
+
+                  petal.style.left = Math.random() * 100 + 'vw';
+                  petal.style.animationDuration = Math.random() * 3 + 4 + 's';
+                  petal.style.fontSize = Math.random() * 15 + 10 + 'px';
+
+                  document.body.appendChild(petal);
+                  setTimeout(() => { petal.remove(); }, 7000);
+            }
+            setInterval(createPetal, 100);
+      </script>
+</body>
+
+</html>
